@@ -1,3 +1,28 @@
 #lst2{
     display: block;
 }
+
+
+@media (max-width: 768px) {
+    .image-container {
+        margin-bottom: 40px; /* Maggiore distanza sotto l'immagine */
+        max-width: 100%; /* Adatta l'immagine alla larghezza dello schermo */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .table {
+        margin-top: 20px;
+        width: 100%; /* La tabella si adatta completamente alla larghezza del telefono */
+    }
+
+    #vino {
+        font-size: 50px; /* Riduce la grandezza del titolo */
+        text-align: center;
+    }
+
+    .container {
+        padding: 10px; /* Aggiunge margini ai lati per non far attaccare tutto */
+    }
+}

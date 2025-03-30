@@ -27,6 +27,8 @@ body{
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiungi transizione */
     overflow: hidden; /* Nascondi overflow */
     position: relative; /* Posizionamento relativo */
+    margin-bottom: 20px; /* Spazio sotto l'immagine */
+    
 }
 
 .image-container::before {
@@ -59,4 +61,19 @@ body{
     width: 90%;
     table-layout: fixed;
     word-wrap: break-word;
+    margin-top: 20px; /* Spazio tra le tabelle */
+    margin-bottom: 20px;
+}
+
+
+h2 {
+    margin-top: 20px; /* Aggiunge spazio sopra ogni titolo */
+    margin-bottom: 20px; /* Aggiunge spazio sotto ogni titolo */
+}
+
+
+.image-container img {
+    width: 100%; /* Occupa sempre il massimo dello spazio disponibile */
+    height: auto; /* Mantiene le proporzioni */
+    object-fit: contain; /* Assicura che l'immagine non venga distorta */
 }

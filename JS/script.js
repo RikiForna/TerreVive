@@ -14,18 +14,22 @@ document.addEventListener("DOMContentLoaded", function () {
       ingredients: "Ingredienti",
       ingredient: "Ingrediente",
       quantity: "Quantità",
-      grapes: "UVA",
+      grapes: "Uva",
       must: "MOSTO DI UVE CONCENTRATO",
       preservatives: "CONSERVANTI E ANTIOSSIDANTI",
-      stabilizers: "AGENTI STABILIZZANTI",
+      rawMaterial: "<strong>MATERIA PRIMA</strong>",
+      additives: "<strong>CONSERVANTI</strong>",
+      stabilizers: "<strong>STABILIZZANTI</strong>",
+      technologicalAids: "<strong>COADIUVANTI TECNOLOGICI</strong>",
+      lieviti: "Lieviti per vinificazione",
       nutrition: "Valori Nutrizionali (per 100ml)",
       component: "Componente",
       value: "Valore",
       energy: "Energia",
       fats: "Grassi",
-      saturatedFats: "di cui grassi saturi",
+      saturatedFats: "Acidi grassi insaturi",
       carbohydrates: "Carboidrati",
-      sugars: "di cui zuccheri",
+      sugars: "Zuccheri",
       proteins: "Proteine",
       fibers: "Fibre",
       salt: "Sale",
@@ -34,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       code: "Codice",
       disposal: "Raccolta Differenziata",
       bottiglia: "Bottiglia",
-      cap: "Tappo Corona",
+      cap: "Tappo",
       capsule: "Capsula",
       tagliandino: "Tagliandino",
       woodenCage: "Gabbia di legno",
@@ -50,8 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
       plasticLDPE4: "LDPE4 (PLASTICA)",
       paperPAP20: "PAP20 (CARTA)",
       woodFOR50: "FOR50 (LEGNO)",
-      metals: "CFE91 Metalli",
-      metal: "Metallo",
+      metals: "FOR 51 (sughero)",
+      metal: "Organico",
+      caps: "capsula",
+      pvc: "PVC C90 (Plastica)",
       instructionText: "Separa le componenti e conferiscile nel modo corretto",
     },
     en: {
@@ -65,18 +71,22 @@ document.addEventListener("DOMContentLoaded", function () {
       ingredients: "Ingredients",
       ingredient: "Ingredient",
       quantity: "Quantity",
-      grapes: "GRAPES",
+      grapes: "Grapes",
       must: "CONCENTRATED GRAPE MUST",
       preservatives: "PRESERVATIVES AND ANTIOXIDANTS",
-      stabilizers: "STABILIZING AGENTS",
+      rawMaterial: "<strong>RAW MATERIAL</strong>",
+      additives: "<strong>PRESERVATIVES</strong>",
+      stabilizers: "<strong>STABILIZERS</strong>",
+      technologicalAids: "<strong>TECHNOLOGICAL AIDS</strong>",
+      lieviti: "Yeasts for winemaking",
       nutrition: "Nutritional Values (per 100ml)",
       component: "Component",
       value: "Value",
       energy: "Energy",
       fats: "Fats",
-      saturatedFats: "of which saturated fats",
+      saturatedFats: "unsaturated fatty acids",
       carbohydrates: "Carbohydrates",
-      sugars: "of which sugars",
+      sugars: "Sugars",
       proteins: "Proteins",
       fibers: "Fibers",
       salt: "Salt",
@@ -85,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       code: "Code",
       disposal: "Recycling",
       bottiglia: "Bottle",
-      cap: "Crown Cap",
+      cap: "Cap",
       capsule: "Capsule",
       tagliandino: "Tag",
       woodenCage: "Wooden Cage",
@@ -103,6 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
       woodFOR50: "FOR50 (WOOD)",
       metals: " CFE91 Metals",
       metal: " Metal",
+      pvc: "PVC C90 (Plastic)",
+      caps: "capsule",
       instructionText: "Separate the components and dispose of them correctly",
     },
   };
@@ -111,13 +123,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-lang]").forEach((element) => {
       const key = element.getAttribute("data-lang");
       if (texts[lang][key]) {
-        element.innerText = texts[lang][key];
+        element.innerHTML = texts[lang][key];
       }
     });
     localStorage.setItem("selectedLanguage", lang);
   }
 
-  const savedLang = localStorage.getItem("selectedLanguage") || "en";
+  // Imposta sempre l'italiano quando la pagina viene caricata
+  const savedLang = "it";
   languageSelect.value = savedLang;
   changeLanguage(savedLang);
 
